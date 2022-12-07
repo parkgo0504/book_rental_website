@@ -1,0 +1,17 @@
+<Context path="/sogo" docBase="www">
+<Resource
+    name="jdbc/sogo"
+    auth="Container"
+    type="javax.sql.DataSource"
+    driverClassName="org.mariadb.jdbc.Driver"
+    loginTimeout="10"
+    validationQuery="SELECT 1 FROM DUAL"
+    maxWait="5000"
+    username="edu3"
+    password="whdlsxmfl1!"
+    testOnBorrow="true"
+    url="jdbc:mariadb://192.168.1.145:3306/edu3?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"/>
+<ResourceLink type="javax.sql.data.DataSource"
+    name="jdbc/sogo"
+    global="jdbc/sogo"/>
+</Context>

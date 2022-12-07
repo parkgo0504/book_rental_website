@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!--JTSM 타일즈 -->
+	<definition name="jtsm" template="/WEB-INF/jsp/egovframework/jtsm/zzlayout/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/egovframework/jtsm/zzlayout/header.jsp"/>
+		<put-attribute name="left" value="/WEB-INF/jsp/egovframework/jtsm/zzlayout/left.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/jsp/egovframework/jtsm/zzlayout/footer.jsp"/>
+		<put-attribute name="modal" value="/WEB-INF/jsp/egovframework/jtsm/zzlayout/modal.jsp"/>
+		<put-attribute name="css" value="/WEB-INF/jsp/egovframework/jtsm/zzlayout/css.jsp"/>
+		<put-attribute name="script" value="/WEB-INF/egovframework/jsp/jtsm/zzlayout/script.jsp"/>
+	</definition>
+
+	<definition name="/*.jtsm" extends="jtsm">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}.jsp"/>
+	</definition>
+	<definition name="/*/*.jtsm" extends="jtsm">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="/*/*/*.jtsm" extends="jtsm">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*.jtsm" extends="jtsm">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*/*.jtsm" extends="jtsm">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}/{5}.jsp"/>
+	</definition>
+
+	<!--JTSM NO 타일즈 -->
+	<definition name="jtsmnotiles" template="/WEB-INF/jsp/egovframework/jtsm/zzlayout/layoutNotiles.jsp">
+	</definition>
+	<definition name="/*.jtsmnotiles" extends="jtsmnotiles">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}.jsp"/>
+	</definition>
+	<definition name="/*/*.jtsmnotiles" extends="jtsmnotiles">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="/*/*/*.jtsmnotiles" extends="jtsmnotiles">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*.jtsmnotiles" extends="jtsmnotiles">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*/*.jtsmnotiles" extends="jtsmnotiles">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}/{5}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*/*/*.jtsmnotiles" extends="jtsmnotiles">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}/{5}/{6}.jsp"/>
+	</definition>
+
+	<!--JTSM excel 타일즈 -->
+	<definition name="excel" template="/WEB-INF/jsp/egovframework/jtsm/zzlayout/layoutExcel.jsp">
+	</definition>
+	<definition name="/*.excel" extends="excel">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}.jsp"/>
+	</definition>
+	<definition name="/*/*.excel" extends="excel">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="/*/*/*.excel" extends="excel">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*.excel" extends="excel">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*/*.excel" extends="excel">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}/{5}.jsp"/>
+	</definition>
+
+	<!-- site 타일즈 -->
+	<definition name="site" template="/WEB-INF/jsp/site/layout/layout.jsp">
+	</definition>
+	<definition name="/*/*.site" extends="site">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="/*/*/*.site" extends="site">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*.site" extends="site">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}.jsp"/>
+	</definition>
+	<definition name="/*/*/*/*/*.site" extends="site">
+		<put-attribute name="content" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}/{5}.jsp"/>
+	</definition>
+	
+	<!-- sogong 타일즈 -->
+	<definition name="sogong" template="/WEB-INF/jsp/sogong/layout/layout.jsp">
+	    
+	</definition>
+	<definition name="*.sogong" extends="sogong">
+		<put-attribute name="content" value="/WEB-INF/jsp/sogong/{1}.jsp"/>
+		   <!-- footer 부분 -->
+		<put-attribute name="footer" value="/WEB-INF/jsp/sogong/layout/footer.jsp"/>
+		<!-- 로그인 안했을 때! -->
+	    <put-attribute name="header" value="/WEB-INF/jsp/sogong/layout/header.jsp"/>
+	    <!-- 로그인 했을 때! -->
+	     <put-attribute name="header2" value="/WEB-INF/jsp/sogong/layout/header2.jsp"/>
+	     <!-- 스크립트 부분 -->
+	     <put-attribute name="script" value="/WEB-INF/jsp/sogong/layout/script.jsp"/>
+	     <!-- 위로가기 버튼 -->
+	    <put-attribute name="top" value="/WEB-INF/jsp/sogong/layout/top.jsp"/>
+	    <!-- 공통 스타일 적용 부분 -->
+	    <put-attribute name="css" value="/WEB-INF/jsp/sogong/layout/css.jsp"/>
+	    <!-- pagination 부분-->
+	    <put-attribute name="css" value="/WEB-INF/jsp/sogong/layout/paging.jsp"/>
+	</definition>
+
+</tiles-definitions>

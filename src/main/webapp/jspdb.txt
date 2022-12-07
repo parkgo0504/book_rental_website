@@ -1,0 +1,89 @@
+﻿CREATE DATABASE USERCHAT;
+
+USE USERCHAT;
+
+
+CREATE TABLE USER1 (
+ userID VARCHAR(20),
+ userPassword VARCHAR(20),
+ userName VARCHAR(20),
+ userAge INT,
+ userGender VARCHAR(20),
+ userEmail VARCHAR(50),
+ userProfile VARCHAR(50)
+)
+
+DROP TABLE CHAT;
+
+CREATE TABLE CHAT (
+  chatID INT PRIMARY KEY AUTO_INCREMENT,
+  fromID VARCHAR(20),
+  toID VARCHAR(20),
+  chatContent VARCHAR(100),
+  chatTime DATETIME,
+  chatRead INT
+);
+
+CREATE TABLE BOARD (
+  userID VARCHAR(20),
+  boardID INT PRIMARY KEY,
+  boardTitle VARCHAR(50),
+  boardContent VARCHAR(2048),
+  boardDate DATETIME,
+  boardHit INT,
+  boardFile VARCHAR(100),
+  boardRealFile VARCHAR(100),
+  boardGroup INT,
+  boardSequence INT,
+  boardLevel INT
+);
+
+DESC BOARD;
+
+DELETE FROM BOARD;     테이블 내용 전체 삭제
+DROP TABLE BOARD;          테이블 자체를 삭제
+
+select * from board;
+
+
+CREATE TABLE BOARD (
+  userID VARCHAR(20),
+  boardID INT PRIMARY KEY,
+  boardTitle VARCHAR(50),
+  boardContent VARCHAR(2048),
+  boardDate DATETIME,
+  boardHit INT,
+  boardFile VARCHAR(100),
+  boardRealFile VARCHAR(100),
+  boardGroup INT,
+  boardSequence INT,
+  boardLevel INT,
+  boardAvailable INT
+);
+
+
+
+
+SELECT * FROM CHAT WHERE chatID IN (SELECT MAX(chatID) FROM CHAT WHERE toID = '123' OR fromID = '123' GROUP BY fromID, toID);
+SELECT * FROM CHAT WHERE chatID IN (SELECT MAX(chatID) FROM CHAT WHERE toID = '이소룡' AND fromID = '이소룡' GROUP BY fromID, toID);
+
+DB 한글지원 
+alter database USERCHAT default character set utf8;
+ALTER TABLE USER convert to charset utf8;
+
+C:\Users\Administrator\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp2\wtpwebapps\UserChat
+경로에 upload 폴더 만들어야 함
+
+
+mysql 테이블에 있는 데이터 삭제하기
+delete from user where userID = '123';
+
+mysql 테이블 내용 전체 삭제
+delete from user;
+
+mysql 테이블 자체를 삭제
+DROP DATEBASE [데이터베이스]
+DROP TABLE [테이블]
+
+DB에 있는 테이블 목록 보기
+show tables;
